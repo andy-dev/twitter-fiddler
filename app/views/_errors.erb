@@ -1,0 +1,27 @@
+<div>
+  <% if session[:errors] %>
+    <% if session[:errors][:user_name] %>
+      <%session[:errors][:user_name].each do |error| %>
+        <%=error %>
+      <%end%>
+    <%end%>
+
+    <% if session[:errors][:password_hash] %>
+      <%session[:errors][:password_hash].each do |error| %>
+        <%=error %>
+      <%end%>
+    <%end%>
+
+    <% if session[:errors][:full_name] %>
+      <%session[:errors][:full_name].each do |error| %>
+        <%=error %>
+      <%end%>
+    <%end%>
+
+    <% if session[:errors][:email] %>
+       <%session[:errors][:email].each do |error| %>
+         <%=error %>
+        <%end%>
+      <% end %>
+    <%end%>
+</div>

@@ -40,14 +40,16 @@ get '/register' do
   erb :register
 end
 
+
 post '/register' do
   @user = User.new(user_name: params[:user_name], full_name: params[:full_name], email: params[:email])
   @user.password=params[:password]
 
   if @user.save
     session[:user_id] = @user.id
-    redirect '/login'
+    redirect '/user/:id'
   else
+    session[:errors] = @user.errors.messages
     redirect '/register'
   end
 

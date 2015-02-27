@@ -7,6 +7,22 @@ class User < ActiveRecord::Base
   has_many :followings, :through => :followed_relationships, :source => :follower
 
   has_many :tweets
+
+  validates :user_name, {
+    uniqueness: {:message => "user name already exists"},
+    presence: {:message => "you must give a username"}
+  }
+  validates :full_name, presence: {:message => "you must give your full name"}
+  validates :email, {
+    presence: {:message => "you must give your email "},
+    uniqueness: {:message => "email already exists"}
+  }
+  validates :password_hash, {
+    presence: {:message => "you must give a pasword "},
+    length: {minimum: 8
+      # :message => "pasword must have 8 or more characters"
+    }
+  }
   include BCrypt
 
   def password
