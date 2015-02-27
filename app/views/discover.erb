@@ -1,0 +1,7 @@
+<h2>Discover</h2>
+
+<% @tweets.each do |tweet| %>
+  <p>Username : <%= tweet.user.user_name %></p>
+  <p>Tweet : <%= tweet %></p>
+  <a href="#"><input type="button" value="follow me!"></a>
+<% end %>
