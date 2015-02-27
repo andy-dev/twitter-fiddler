@@ -2,6 +2,10 @@
   line-height: 20px;
 }
 
+a {
+	text-decoration: none;
+}
+
 .clear {
 	clear: both;
 }

@@ -1,7 +1,8 @@
 <h2>Discover</h2>
 
 <% @tweets.each do |tweet| %>
-  <p>Username : <%= tweet.user.user_name %></p>
-  <p>Tweet : <%= tweet.content %></p>
-  <a href="#"><input type="button" value="follow me!"></a>
+  <span><%= tweet.user.user_name %></span>
+  <span>tweets : <%= tweet.content %></span>
+  <p><%=tweet.created_at.to_s[5..9] %></p>
+  <p><a href="#"><input type="button" value="follow <%= tweet.user.user_name %>!"></a></p>
 <% end %>
