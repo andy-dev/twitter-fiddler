@@ -1,3 +1,4 @@
+require 'bcrypt'
 class User < ActiveRecord::Base
   has_many :tweets
 
@@ -6,6 +7,17 @@ class User < ActiveRecord::Base
 
   has_many :followed_relationships, :class_name => "Relationship", :foreign_key => "follower_id"
   has_many :followings, :through => :followed_relationships, :source => :follower
+
+  include BCrypt
+
+  def password
+    @password ||= Password.new(password_hash)
+  end
+
+  def password=(new_password)
+    @password = Password.create(new_password)
+    self.password_hash = @password
+  end
 
 
 end
