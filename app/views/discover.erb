@@ -1,8 +1,12 @@
 <h2>Discover</h2>
 
 <% @tweets.each do |tweet| %>
-  <span><%= tweet.user.user_name %></span>
-  <span>tweets : <%= tweet.content %></span>
-  <p><%=tweet.created_at.to_s[5..9] %></p>
-  <p><a href="#"><input type="button" value="follow <%= tweet.user.user_name %>!"></a></p>
+<span><%= tweet.user.user_name %></span>
+<span>tweets : <%= tweet.content %></span>
+<p><%=tweet.created_at.to_s[5..9] %></p>
+<p>
+  <form action='/discover/<%= @user.id %>/follow/<%= tweet.user.id %>' method='post'>
+    <input type='submit' value='Follow <%= tweet.user.user_name %>'>
+  </form>
+</p>
 <% end %>
