@@ -14,13 +14,20 @@
     </form>
   </section>
 
-  <% if @tweets %>
   <section id="tweets_display">
-      <% @tweets.each do |tweet| %>
-      <div class="row">
-        <%= tweet.content %>
-      </div>
-      <% end %>
+    <% if @user_tweets %>
+    <% @user_tweets.each do |user_tweet| %>
+    <div class="row">
+      <%= user_tweet.user.user_name %>: <%= user_tweet.content %>
+    </div>
+    <% end %>
+    <% if @follower_tweets %>
+    <% @follower_tweets.each do |tweet| %>
+    <div class="row">
+      <%= tweet.user.user_name %>: <%= tweet.content %>
+    </div>
+    <% end %>
+    <% end %>
   </section>
   <% end %>
 
