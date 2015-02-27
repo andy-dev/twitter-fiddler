@@ -1,5 +1,5 @@
 <% if session[:user_id].present? %>
-  <p>Dear, this is not you?</p>
+  <p>Dear, this is not you? <%= @login_user %></p>
   <p><%= erb :logout_btn %></p> 
 <%else%>
   <h1>Login</h1>
@@ -10,4 +10,6 @@
     <input type="password" name="password">
     <input type="submit" value="login">
   </form>
+
+  <a href="/register"><h1> Register a new account ?</h1></a>
 <%end%>
