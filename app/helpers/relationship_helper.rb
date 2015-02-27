@@ -1,8 +1,17 @@
 helpers do
 
-  def establish_relationship(user_to_follow, user_that_follows)
-    user_to_follow.followers << user_that_follows
-    user_that_follows.followings << user_to_follow
+  def get_followers_tweets
+    all_tweets = []
+
+    follow = @user.followers
+
+    follow.each do |f|
+      f.tweets.each do |t|
+        all_tweets << t
+      end
+    end
+
+    all_tweets
   end
 
 end

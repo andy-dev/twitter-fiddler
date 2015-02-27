@@ -7,9 +7,9 @@ end
 
 get '/user/:id' do
   @user = User.find(params[:id])
-  @tweets = @user.tweets
+  @user_tweets = @user.tweets
+  @follower_tweets = get_followers_tweets
   erb :user
-
 end
 
 get '/login' do
