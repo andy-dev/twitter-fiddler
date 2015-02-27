@@ -1,0 +1,6 @@
+<span id="logout_btn">
+<% if session[:user_id].present? %>
+    <a href="/discover/<%= @user.id %>"><button>Discover</button></a>
+<% end %>
+</span>
+
