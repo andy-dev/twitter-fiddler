@@ -1,14 +1,25 @@
+
+<div class="container">
+  <h1>Sign up</h1>
+
+
+
+
+<%= erb :"_errors" %>
+
+
 <% if session[:user_id].present? %>
   <p>Want to register another account?</p>
-  <p><%= erb :logout_btn %></p> 
+  <p><%= erb :logout_btn %></p>
 <%else%>
 
 <h1>Sign up</h1>
+
   <form action="/register" method="POST">
     <label>Username</label>
     <input type="text" name="user_name">
     <label>Password</label>
-    <input type="password" name="password">
+    <input type="password" name="password" required>
     <label>Email</label>
     <input type="text" name="email">
     <label>full name:</label>

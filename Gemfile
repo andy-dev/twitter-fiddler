@@ -6,6 +6,7 @@ gem 'pg'
 
 # Sinatra driver
 gem 'sinatra'
+#gem 'sinatra-flash'
 gem 'sinatra-contrib'
 
 gem 'activesupport', '~>4.1'
@@ -15,6 +16,8 @@ gem 'rake'
 
 gem 'shotgun'
 gem 'bcrypt'
+gem 'debugger'
+
 
 group :test do
   gem 'shoulda-matchers'
