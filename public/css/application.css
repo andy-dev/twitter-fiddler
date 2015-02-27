@@ -1,13 +1,27 @@
 *{
   line-height: 20px;
+  background-color: #C0DEED;
 }
 
-a {
-	text-decoration: none;
+a:link, a:visited {
+    text-decoration: none;
 }
 
 .clear {
 	clear: both;
+}
+
+.bg_img {
+	margin: 0 -20px;
+	background-image: url("https://abs.twimg.com/images/themes/theme1/bg.png");
+	height: 190px;
+	padding: 50px 0 0 130px;
+}
+
+#twitter{
+	font-size: 5em;
+	color: #0084B4;
+	background-color: transparent;
 }
 
 #welcome {
