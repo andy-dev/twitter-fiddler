@@ -2,6 +2,6 @@
 
 <% @tweets.each do |tweet| %>
   <p>Username : <%= tweet.user.user_name %></p>
-  <p>Tweet : <%= tweet %></p>
+  <p>Tweet : <%= tweet.content %></p>
   <a href="#"><input type="button" value="follow me!"></a>
 <% end %>

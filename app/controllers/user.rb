@@ -13,18 +13,22 @@ get '/user/:id' do
 end
 
 get '/login' do
-
-
-
-
   erb :login
+end
+
+helpers do
+
+  def call_logout_btn(user_id)
+    @login_user = User.find(user_id)
+  end
+
 end
 
 post '/login' do
  @user= User.find_by(user_name: params[:user_name])
   if @user.password == params[:password]
     session[:user_id] = @user.id
-    p session[:user_id]
+    call_logout_btn(session[:user_id])
     redirect '/'
   else
     redirect '/login'
@@ -33,10 +37,6 @@ post '/login' do
 end
 
 get '/register' do
-
-
-
-
   erb :register
 end
 

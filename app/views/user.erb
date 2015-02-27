@@ -1,5 +1,9 @@
 <header>
-  <h2>Welcome, <%= @user.full_name %></h2>
+<div class="row">
+  <span id="welcome">Welcome, <%= @user.full_name %></span>
+  <%= erb :logout_btn %>
+  <div class="clear"></div>
+</div>
 </header>
 
 <main>
