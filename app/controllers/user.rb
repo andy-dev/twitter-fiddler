@@ -34,9 +34,6 @@ end
 
 get '/register' do
 
-
-
-
   erb :register
 end
 
@@ -48,7 +45,10 @@ post '/register' do
     session[:user_id] = @user.id
     redirect '/login'
   else
-    redirect '/register'
+    #@error = @user.errors[:user_name][0]
+    @errors = @user.errors
+    #debugger
+    erb :register
   end
 
 end
