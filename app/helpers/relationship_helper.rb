@@ -3,7 +3,7 @@ helpers do
   def get_followers_tweets
     all_tweets = []
 
-    follow = @user.followers
+    follow = @user.followings
 
     follow.each do |f|
       f.tweets.each do |t|
