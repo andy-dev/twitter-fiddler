@@ -4,9 +4,22 @@
 <span><%= tweet.user.user_name %></span>
 <span>tweets : <%= tweet.content %></span>
 <p><%=tweet.created_at.to_s[5..9] %></p>
-<p>
+
+  <% if following?(tweet) %>
+  <p><%= tweet.user.id %></p>
   <form action='/discover/<%= @user.id %>/follow/<%= tweet.user.id %>' method='post'>
     <input type='submit' value='Follow <%= tweet.user.user_name %>'>
   </form>
-</p>
+  <% else %>
+    <form >
+    <input value='Already Following! <%= tweet.user.user_name %>'>
+  </form>
+  <% end %>
 <% end %>
+
+<div class="Following">
+  <h1>You are following this people</h1>
+  <% @user.followings.each do |follow| %>
+  <p><%= follow.user_name %></p>
+  <% end %>
+</div>

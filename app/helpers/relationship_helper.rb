@@ -14,4 +14,11 @@ helpers do
     all_tweets
   end
 
+  def following?(tweet)
+    @user.followings.each do |follow|
+      follow.id == tweet ? true : false
+    end
+
+  end
+
 end
