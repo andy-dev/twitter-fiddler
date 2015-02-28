@@ -1,6 +1,6 @@
 <span id="logout_btn">
 <% if session[:user_id].present? %>
-    <a href="/discover/<%= @user.id %>"><button>Discover</button></a>
+    <a href="/discover/<%= @user.id %>"><input class="btn btn-primary" type="submit" value="Discover"></a>
 <% end %>
 </span>
 

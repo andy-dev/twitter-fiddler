@@ -3,10 +3,6 @@
   background-color: #C0DEED;
 }
 
-a:link, a:visited {
-    text-decoration: none;
-}
-
 .clear {
 	clear: both;
 }
@@ -15,7 +11,14 @@ a:link, a:visited {
 	margin: 0 -20px;
 	background-image: url("https://abs.twimg.com/images/themes/theme1/bg.png");
 	height: 190px;
-	padding: 50px 0 0 130px;
+	padding: 50px 0 0 150px;
+}
+
+#tweet_box {
+	height: 150px;
+	width: 100%;
+	background-color: #fff;
+	border-radius: 15px;
 }
 
 #twitter{
@@ -25,9 +28,63 @@ a:link, a:visited {
 }
 
 #welcome {
-	float: left;
 	margin: 5px 0px 5px 25px;
 	font-size: 1.2em;
+	background-color: #0084B4;
+	height: 50px;
+	width: 250px;
+	border-top-right-radius: 5px;
+	border-top-left-radius: 5px;
+	padding: 10px;
+}
+
+#follow_info {
+	margin: -5px 0 5px 25px;
+	font-size: 1.2em;
+	background-color: #fff;
+	height: 100px;
+	width: 250px;
+	border-bottom-right-radius: 5px;
+	border-bottom-left-radius: 5px;
+	padding: 10px;
+}
+
+.display_username {
+	font-size: 1.5em;
+	font-weight: bold;
+}
+
+.pure_bg {
+	background-color: transparent;
+}
+
+
+.tweets_display{
+	height: 100px;
+	width: 100%;
+	background-color: #fff;
+	border-radius: 15px;
+	margin-top: 15px;
+	padding: 15px;
+	font-size: 1.5em;
+}
+
+.discover_display{
+	height: 100px;
+	width: 90%;
+	background-color: #fff;
+	border-radius: 15px;
+	margin-top: 15px;
+	padding: 15px;
+	font-size: 1.5em;
+}
+
+#tweets_section {
+	padding: 20px 0 0 20px;
+}
+
+#discover_section {
+	padding: 20px;
 }
 
 #logout_btn {
